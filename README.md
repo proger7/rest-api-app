@@ -59,31 +59,34 @@ For the alternative MsSQL_CRUD_API class the following mapping applies:
 
 The other variables are not MySQL or MsSQL server specific.
 
-## Usage
 
+## Token
+Add token at the end of url. For example, http://<DOMAIN>/api.php/item?token=test777
+
+## Usage
 You can do all CRUD (Create, Read, Update, Delete) operations and one extra List operation. Here is how:
 
 ### List
-http://<DOMAIN>/api.php/item
+http://<DOMAIN>/api.php/item?token=test777
 
 ### Create
 You can easily add a record using the POST method 
 (x-www-form-urlencoded, see rfc1738). The call returns the "last insert id".
-POST http://<DOMAIN>/api.php/item
+POST http://<DOMAIN>/api.php/item?token=test777
 id=1&name=Internet
 
 ### Read
-GET http://<DOMAIN>/api.php/item/1
+GET http://<DOMAIN>/api.php/item/1?token=test777
 
 ### Update
 Editing a record is done with the PUT method. The call returns the rows affected.
-PUT http://<DOMAIN>/api.php/item/4
+PUT http://<DOMAIN>/api.php/item/4?token=test777
 id=4&name=Internet+networking
 
 
 ### Delete
 The DELETE verb is used to delete a record. The call returns the rows affected.
-DELETE http://<DOMAIN>/api.php/item/4
+DELETE http://<DOMAIN>/api.php/item/4?token=test777
 
 ## Tests
 
